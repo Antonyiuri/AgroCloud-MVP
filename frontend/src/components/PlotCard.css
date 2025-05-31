@@ -1,0 +1,22 @@
+.plot-card {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  padding: 20px;
+  width: 300px;
+  margin: 20px;
+}
+
+.plot-card-content {
+  color: #333;
+}
+
+.plot-card h3 {
+  color: #222;
+  margin-bottom: 10px;
+}
+
+.plot-card p {
+  margin: 5px 0;
+}

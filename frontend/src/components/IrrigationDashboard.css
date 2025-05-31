@@ -1,0 +1,29 @@
+.dashboard {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  font-size: 18px; /* Tamanho mínimo da fonte */
+}
+
+.sensor-card {
+  width: 300px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  padding: 20px;
+}
+
+.sensor-data {
+  font-size: 18px;
+  margin-top: 10px;
+}
+
+.sensor-data .value {
+  font-weight: bold;
+}
+
+.sensor-data .variation {
+  color: #888;
+  margin-left: 10px;
+}

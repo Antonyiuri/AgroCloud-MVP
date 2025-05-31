@@ -1,0 +1,39 @@
+.chatbot {
+  background-color: #f0f0f0;
+  padding: 20px;
+  position: fixed;
+  bottom: 0;
+  left: 200px; /* Largura da Navigation */
+  width: calc(100% - 200px);
+  font-size: 18px; /* Tamanho mínimo da fonte */
+}
+
+.message-history {
+  /* Estilos para o histórico de mensagens */
+}
+
+.input-area {
+  display: flex;
+}
+
+.input-area input {
+  flex: 1;
+  padding: 10px;
+  font-size: 18px;
+}
+
+.input-area button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.response {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 8px;
+}
