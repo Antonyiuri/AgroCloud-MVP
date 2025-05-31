@@ -9,11 +9,9 @@ function Chatbot() {
     event.preventDefault();
 
     try {
-      const res = await fetch("http://localhost:5000/ask", { // ✅ porta corrigida aqui
+      const res = await fetch("http://localhost:5000/ask", {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ pergunta: question }),
       });
 
@@ -31,25 +29,30 @@ function Chatbot() {
   };
 
   return (
-    <div className="chatbot">
-      <div className="message-history">
-        {/* Mensagens do chatbot aqui */}
+    <div className="chatbot-container">
+      <h2 className="chatbot-title">🤖 Chatbot Agrícola</h2>
+
+      <div className="chatbot-response-box">
+        {response ? (
+          <div className="bot-response">
+            <span className="bot-label">🌱 Bot:</span>
+            <p>{response}</p>
+          </div>
+        ) : (
+          <p className="placeholder-text">As respostas aparecerão aqui...</p>
+        )}
       </div>
-      <form className="input-area" onSubmit={handleSubmit}>
+
+      <form className="chatbot-form" onSubmit={handleSubmit}>
         <input
           type="text"
+          className="chatbot-input"
           value={question}
           onChange={(e) => setQuestion(e.target.value)}
-          placeholder="Digite aqui sua dúvida"
+          placeholder="Digite sua dúvida sobre a plantação..."
         />
-        <button type="submit">Enviar</button>
+        <button type="submit" className="chatbot-button">Enviar</button>
       </form>
-      {response && (
-        <div className="response">
-          <strong>Resposta:</strong>
-          <p>{response}</p>
-        </div>
-      )}
     </div>
   );
 }
