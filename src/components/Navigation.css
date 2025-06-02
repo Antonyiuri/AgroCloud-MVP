@@ -1,0 +1,28 @@
+.navigation {
+  width: 200px;
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  font-size: 18px; /* Tamanho mínimo da fonte */
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.nav-links {
+  list-style: none;
+  padding: 0;
+}
+
+.nav-links li {
+  margin-bottom: 10px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px; /* Tamanho da fonte dos links */
+}

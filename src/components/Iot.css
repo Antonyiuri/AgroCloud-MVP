@@ -1,0 +1,17 @@
+/* STATUS INDICATOR */
+.status-indicator {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.status-indicator.online {
+  background-color: #2ecc71; /* Verde */
+}
+
+.status-indicator.offline {
+  background-color: #e74c3c; /* Vermelho */
+}
