@@ -4,6 +4,9 @@ import os
 from dotenv import load_dotenv
 from flask_cors import CORS
 
+app = Flask(__name__)
+CORS(app) 
+
 # Carrega variáveis do .env
 load_dotenv()
 api_key = os.getenv("GOOGLE_API_KEY")
@@ -19,10 +22,6 @@ Seu trabalho é ajudar agricultores a entender melhor a rotina da fazenda, tirar
 
 Fale como um parceiro de fazenda. Responda sempre com bom senso, dicas práticas e com foco na economia de recursos e na produtividade.
 """
-
-# Inicializa o app Flask
-app = Flask(__name__)
-CORS(app) 
 
 
 # Endpoint principal

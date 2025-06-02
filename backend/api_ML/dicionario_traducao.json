@@ -1,0 +1,37 @@
+{
+  "colunas": {
+    "temp": "temperatura",
+    "humidity": "umidade",
+    "MOI": "umidade_solo",
+    "crop ID": "cultura",
+    "soil_type": "tipo_solo",
+    "Seedling Stage": "estagio_cultivo",
+    "result": "irrigar"
+  },
+  "culturas": {
+    "Wheat": "Trigo",
+    "Tomato": "Tomate",
+    "Potato": "Batata",
+    "Carrot": "Cenoura",
+    "Chilli": "Pimenta"
+  },
+  "solos": {
+    "Loam Soil": "Solo Argiloso",
+    "Clay Soil": "Solo Argiloso Pesado",
+    "Sandy Soil": "Solo Arenoso",
+    "Black Soil": "Solo Preto",
+    "Red Soil": "Solo Vermelho",
+    "Chalky Soil": "Solo Calcário",
+    "Alluvial Soil": "Solo Aluvial"
+  },
+  "estagios": {
+    "Germination": "Germinação",
+    "Seedling Stage": "Estágio de Muda",
+    "Vegetative Growth / Root or Tuber Development": "Crescimento Vegetativo",
+    "Flowering": "Floração",
+    "Pollination": "Polinização",
+    "Fruit/Grain/Bulb Formation": "Formação de Frutos",
+    "Maturation": "Maturação",
+    "Harvest": "Colheita"
+  }
+}

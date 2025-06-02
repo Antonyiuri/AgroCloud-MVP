@@ -1,0 +1,7 @@
+{
+  "accuracy_cv": 0.9989,
+  "f1_score_cv": 0.9989,
+  "total_samples": 15289,
+  "features_count": 23,
+  "class_distribution":0
+ }
