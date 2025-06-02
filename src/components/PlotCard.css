@@ -1,0 +1,39 @@
+.sensor-card {
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+  border-radius: 8px;
+  padding: 15px;
+  margin: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.sensor-title {
+  font-size: 1.2em;
+  color: #333333;
+  margin-bottom: 10px;
+}
+
+.sensor-value {
+  font-size: 2em;
+  color: #00796b;
+}
+
+.sensor-unit {
+  font-size: 1em;
+  color: #666666;
+}
+
+.plot-card {
+  border: 1px solid #00796b;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.plot-card h3 {
+  margin-top: 0;
+}
+
+.plot-card p {
+  margin-bottom: 5px;
+}
