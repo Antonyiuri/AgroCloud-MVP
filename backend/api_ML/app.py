@@ -6,7 +6,7 @@ import numpy as np
 import os
 
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "*"}})  # Permite todas as origens
+CORS(app)  # Permite todas as origens
 
 
 modelo = joblib.load('modelo_irrigacao.pkl')  # Carregar modelo já treinado
@@ -268,4 +268,4 @@ if __name__ == '__main__':
     print("   GET /opcoes - Opções disponíveis")
     print("🔗 Acesse: http://localhost:5000")
     
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port=5000)

@@ -1,45 +1,85 @@
 .navigation {
-  height: 100vh;
-  width: 250px;
-  background: linear-gradient(to bottom, #a5d6a7, #81c784);
-  padding: 30px 20px;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 4px 0 12px rgba(0, 0, 0, 0.1);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 250px;
+    background-color: #2e7d32;
+    z-index: 1000;
+    padding-top: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    color: white;
 }
+
+.navigation ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navigation li {
+    padding: 15px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.navigation li:hover {
+    background-color: #388e3c;
+}
+
+.navigation a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
 
 .logo {
   font-size: 28px;
-  font-weight: 700;
-  color: #2e7d32;
-  margin-bottom: 40px;
-  text-align: center;
+  font-weight: bold;
+  margin-bottom: 30px;
+  display: flex;
+  align-items: center;
+  color: #c8e6c9;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+}
+
+.logo-icon {
+  width: 45px;
+  height: 45px;
+  margin-right: 10px;
+  border-radius: 10px;
+  object-fit: cover;
 }
 
 .nav-links {
   list-style: none;
   padding: 0;
-  margin: 0;
+  flex-grow: 1; /* Allows links to take available space */
 }
 
 .nav-links li {
-  margin-bottom: 20px;
+  margin-bottom: 15px; /* More space between links */
 }
 
 .nav-links a {
+  color: #e8f5e9;
   text-decoration: none;
-  font-size: 18px;
-  color: #2e7d32;
-  font-weight: 500;
-  background-color: #ffffff;
-  padding: 12px 16px;
-  border-radius: 12px;
-  display: block;
-  transition: background-color 0.3s, transform 0.2s;
+  font-size: 17px;
+  padding: 10px 12px; /* Padding for clickable area */
+  display: flex; /* Align icon and text */
+  align-items: center;
+  border-radius: 8px; /* Slightly rounded corners */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
 }
 
 .nav-links a:hover {
-  background-color: #c8e6c9;
-  transform: translateX(5px);
+  background-color: #4caf50; /* Lighter green on hover */
+  color: white;
+}
+
+.nav-links a svg { /* Styling for lucide-react icons */
+  margin-right: 10px;
 }

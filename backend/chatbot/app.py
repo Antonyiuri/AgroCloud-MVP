@@ -1,30 +1,23 @@
+# app.py
+
 from flask import Flask, request, jsonify
 import google.generativeai as genai
-import os
 from dotenv import load_dotenv
+import os
 from flask_cors import CORS
 
+from agentes import SAUDACAO_PROMPT, IRRIGACAO_PROMPT, AGRO_NEURAL_PROMPT, SENSOR_PROMPT, GERAL_PROMPT, IA_CAMPO
+from router import classificar_intencao
+
+# Setup
 app = Flask(__name__)
-CORS(app) 
-
-# Carrega variáveis do .env
+CORS(app)
 load_dotenv()
-api_key = os.getenv("GOOGLE_API_KEY")
 
-# Configura o Gemini
+api_key = os.getenv("GOOGLE_API_KEY")
 genai.configure(api_key=api_key)
 model = genai.GenerativeModel(model_name="gemini-1.5-flash")
 
-# Prompt do sistema
-SYSTEM_PROMPT = """
-Você é o AgroBot, um assistente agrícola especializado em lavouras de café. 
-Seu trabalho é ajudar agricultores a entender melhor a rotina da fazenda, tirar dúvidas, dar dicas e se comunicar de forma simples e direta.
-
-Fale como um parceiro de fazenda. Responda sempre com bom senso, dicas práticas e com foco na economia de recursos e na produtividade.
-"""
-
-
-# Endpoint principal
 @app.route('/ask', methods=['POST'])
 def ask_agrobot():
     data = request.get_json()
@@ -34,16 +27,33 @@ def ask_agrobot():
         return jsonify({'erro': 'Campo "pergunta" é obrigatório'}), 400
 
     try:
+        intencao = classificar_intencao(user_question)
+
+        if intencao == 'saudacao':
+            prompt = SAUDACAO_PROMPT
+        elif intencao == 'irrigacao':
+            prompt = IRRIGACAO_PROMPT
+        elif intencao == 'agro_neural':
+            prompt = AGRO_NEURAL_PROMPT
+        elif intencao == SENSOR_PROMPT:
+            prompt == 'sensor'
+        elif intencao == IA_CAMPO:
+            prompt == 'ia_campo'
+        else:
+            prompt = GERAL_PROMPT
+
+        full_prompt = f"{prompt}\n\n{user_question}"
         convo = model.start_chat(history=[])
-        full_prompt = f"{SYSTEM_PROMPT}\n\n{user_question}"
         response = convo.send_message(full_prompt)
         resposta_bot = response.text
 
-        return jsonify({'resposta': resposta_bot})
+        return jsonify({
+            'resposta': resposta_bot,
+            'agente_usado': intencao
+        })
 
     except Exception as e:
         return jsonify({'erro': str(e)}), 500
 
-# Roda o servidor local
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=8080)
