@@ -1,62 +1,94 @@
-O backend é responsável pela lógica do servidor, APIs e conexão com o banco de dados (se houver).
+# AgroCloud - MVP 🌱☁️
 
-Pré-requisitos
-Python 3.8 ou superior
+Este README fornece as instruções para rodar o projeto completo AgroCloud, um MVP voltado para **agricultura sustentável inteligente**, com APIs de chatbot, inteligência artificial e um frontend interativo.
 
-pip instalado
+---
 
-Ambiente virtual (recomendado)
+## ✅ Pré-requisitos
 
-Passos para execução
-Abra o terminal e navegue até a pasta do backend:
+Antes de começar, instale:
 
+- [Git](https://git-scm.com/)
+- [Python 3.10+](https://www.python.org/)
+- [Node.js + npm](https://nodejs.org/)
+- Uma IDE como o [Visual Studio Code (VSCode)](https://code.visualstudio.com/)
+
+---
+
+## 📥 Clonar o Repositório
+
+Abra seu terminal e execute:
+
+```bash
+git clone https://github.com/Antonyiuri/AgroCloud-MVP.git
+🔐 Configurar Chave da API Gemini
+No Google Drive do projeto, copie o arquivo CHAVE API GEMINI.
+
+Navegue até a pasta:
+
+swift
+Copiar
+Editar
+AgroCloud-MVP/Agrochat/projeto/backend/chatbot
+Crie (ou edite) o arquivo .env com o conteúdo:
+
+ini
+Copiar
+Editar
+GOOGLE_API_KEY=SUA_CHAVE_AQUI
+🤖 Rodar API do Chatbot
 bash
-cd backend
+Copiar
+Editar
+cd AgroCloud-MVP/Agrochat/projeto/backend/chatbot
 
-Crie e ative um ambiente virtual (caso ainda não exista):
-Linux/Mac:
+# Ativar ambiente virtual (Windows)
+venv\Scripts\activate
 
-bash
-python3 -m venv venv
+# OU (Linux/Mac)
 source venv/bin/activate
-Windows:
 
-bash
-python -m venv venv
-.\venv\Scripts\activate
-Instale as dependências do projeto:
-
-bash
+# Instalar dependências
 pip install -r requirements.txt
-Execute a aplicação:
 
-bash
+# Rodar API
 python app.py
-O servidor estará rodando em http://localhost:5000 (ou na porta definida no código).
-
-🌐 Frontend (React ou outro framework JS)
-O frontend é a interface visual que o usuário interage. Ele se comunica com o backend através de requisições HTTP.
-
-Pré-requisitos
-Node.js (versão 14 ou superior)
-
-npm (gerenciador de pacotes do Node)
-
-Passos para execução
-Abra um novo terminal e vá até a pasta do frontend:
-
-bash
-cd frontend
-Instale as dependências do projeto:
-
-bash
-npm install
-Inicie a aplicação:
+🧠 Rodar API de Machine Learning (api_ML)
+Abra um outro terminal e execute:
 
 bash
 Copiar
 Editar
-npm start
-O frontend estará disponível no navegador em http://localhost:3000.
+cd AgroCloud-MVP/Agrochat/projeto/backend/api_ML
 
-⚠️ Certifique-se de que o backend esteja rodando antes de iniciar o frontend, caso a aplicação dependa de APIs.
+# Ativar ambiente virtual (Windows)
+venv\Scripts\activate
+
+# OU (Linux/Mac)
+source venv/bin/activate
+
+# Instalar dependências
+pip install -r requirements.txt
+
+# Rodar API
+python app.py
+⚠️ Observação: As duas APIs devem ser rodadas em terminais separados.
+
+💻 Rodar o Frontend
+bash
+Copiar
+Editar
+cd AgroCloud-MVP/Agrochat/projeto/frontend
+
+npm install
+npm start
+O frontend será iniciado em http://localhost:3000.
+
+📝 Observações Finais
+As APIs devem estar ativas para o frontend funcionar corretamente.
+
+Em caso de erros, confira se as dependências foram instaladas corretamente e se o arquivo .env está com a chave certa.
+
+Recomendado rodar o projeto com Python 3.10+ e Node.js 16+.
+
+
